@@ -1,0 +1,330 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  color: #1a56db;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  color: #1a56db;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* ===== Dashboard ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #1a56db;
+}
+
+.stat-card.approved {
+  border-top-color: #16a34a;
+}
+
+.stat-card.pending {
+  border-top-color: #d97706;
+}
+
+.stat-card.rejected {
+  border-top-color: #dc2626;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ===== Form ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: #1a56db;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #1648c0;
+}
+
+.btn-approve {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.btn-approve:hover {
+  background-color: #15803d;
+}
+
+.btn-reject {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.btn-reject:hover {
+  background-color: #b91c1c;
+}
+
+.btn-delete {
+  background-color: #64748b;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #475569;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== Messages ===== */
+.message {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  min-height: 20px;
+}
+
+.message.success {
+  color: #16a34a;
+}
+
+.message.error {
+  color: #dc2626;
+}
+
+/* ===== Table ===== */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+thead {
+  background-color: #1a56db;
+  color: #fff;
+}
+
+th {
+  padding: 12px 10px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Status badges */
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Action buttons in table */
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.actions .btn {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.empty-message {
+  text-align: center;
+  color: #94a3b8;
+  padding: 32px 0;
+  font-size: 0.95rem;
+}
+
+.empty-message.hidden {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 16px 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}

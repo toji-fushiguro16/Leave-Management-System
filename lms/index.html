@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Leave Management System</h1>
+      <p>Apply, track, and manage employee leave requests</p>
+    </header>
+
+    <!-- Dashboard Stats -->
+    <section class="dashboard" id="dashboard">
+      <div class="stat-card">
+        <span class="stat-number" id="totalCount">0</span>
+        <span class="stat-label">Total Requests</span>
+      </div>
+      <div class="stat-card approved">
+        <span class="stat-number" id="approvedCount">0</span>
+        <span class="stat-label">Approved</span>
+      </div>
+      <div class="stat-card pending">
+        <span class="stat-number" id="pendingCount">0</span>
+        <span class="stat-label">Pending</span>
+      </div>
+      <div class="stat-card rejected">
+        <span class="stat-number" id="rejectedCount">0</span>
+        <span class="stat-label">Rejected</span>
+      </div>
+    </section>
+
+    <!-- Leave Application Form -->
+    <section class="card form-section">
+      <h2>Apply for Leave</h2>
+      <form id="leaveForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="employeeName">Employee Name</label>
+            <input type="text" id="employeeName" placeholder="Enter full name" required>
+          </div>
+          <div class="form-group">
+            <label for="employeeId">Employee ID</label>
+            <input type="text" id="employeeId" placeholder="e.g. EMP001" required>
+          </div>
+          <div class="form-group">
+            <label for="leaveType">Leave Type</label>
+            <select id="leaveType" required>
+              <option value="">Select leave type</option>
+              <option value="Casual">Casual</option>
+              <option value="Sick">Sick</option>
+              <option value="Earned">Earned</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" required>
+          </div>
+          <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate" required>
+          </div>
+          <div class="form-group full-width">
+            <label for="reason">Reason</label>
+            <textarea id="reason" rows="3" placeholder="Brief reason for leave" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Apply Leave</button>
+      </form>
+      <p class="message" id="formMessage"></p>
+    </section>
+
+    <!-- Leave Requests Table -->
+    <section class="card table-section">
+      <h2>Leave Requests</h2>
+      <div class="table-wrapper">
+        <table id="leaveTable">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>ID</th>
+              <th>Type</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Reason</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="leaveTableBody">
+            <!-- Rows are added by JavaScript -->
+          </tbody>
+        </table>
+        <p class="empty-message" id="emptyMessage">No leave requests yet. Submit one above.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
